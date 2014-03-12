@@ -1,0 +1,19 @@
+.vagrant
+.kitchen.yml
+Berksfile.lock
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+/cookbooks
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*
+.kitchen/*
+
+# ChefSpec
+.coverage/*
