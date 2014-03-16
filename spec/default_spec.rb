@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'redmine::default' do
+describe 'wrapper-redmine::default' do
   let(:chef_run) do
     ChefSpec::Runner.new do |node|
       node.set['mysql']['server_debian_password'] = 'password'
@@ -16,6 +16,8 @@ describe 'redmine::default' do
   end
 
   %w{redmine::default
+     wrapper-redmine::redmine_plugins
+     wrapper-redmine::sync_repos
     }.each do |rec|
     it "should include the #{rec} recipe" do
       expect(chef_run).to include_recipe(rec)
