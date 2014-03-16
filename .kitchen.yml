@@ -16,19 +16,21 @@ platforms:
    
 suites:
   - name: default
+    encrypted_data_bag_secret_key_path: 'test/integration/default/encrypted_data_bag_secret'
     driver_config:
       network:
       - ['forwarded_port', {guest: 80, host: 8081}]
     run_list:
       - recipe[wrapper-redmine::default]
-#      - recipe[gitlab::default]
+      - recipe[gitlab::default]
     attributes:
       mysql:
         server_root_password: 'rootpass'
         server_debian_password: 'debpass'
         server_repl_password: 'replpass'
         bind_address: 'localhost'
-      gitlab:
-        mysql_password: 'k09vw7wa5s'
+      redmine:
+        database:
+          password: 'redmine'
     excludes:
       - centos-6.4

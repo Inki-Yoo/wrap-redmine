@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'gitlab'
+
+g = Gitlab.client(:endpoint => "<%= @protocol %>://<%= @gitlaburl %>/api/v3", :private_token => "<%= @redminetoken %>")
+ 
+user = g.user
+projects = g.projects
+ 
+puts "Projects accessible by user #{user.name}:"
+projects.reverse.each do |project|
+puts " #{project.id} => #{project.name}"
+end
