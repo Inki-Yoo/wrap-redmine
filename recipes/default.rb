@@ -1,4 +1,8 @@
-redmine_secrets = Chef::EncryptedDataBagItem.load('secrets', 'redmine')
+chef_gem 'chef-vault'
+
+require 'chef-vault'
+
+redmine_secrets = ChefVault::Item.load('secrets', 'redmine')
 node.override['gitlab']['database']['password'] = redmine_secrets['password']
 
 include_recipe 'redmine'
