@@ -22,3 +22,4 @@ version          '0.1.4'
 end
 
 depends 'ohai', '~> 1.1.10'
+depends 'gitlab'
