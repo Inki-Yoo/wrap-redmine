@@ -1,3 +1,5 @@
+** 0.1.7
+- Override gitlab ruby bin
 ** 0.1.6
 - Added extra depends
 
