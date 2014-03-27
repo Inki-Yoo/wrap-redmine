@@ -1,3 +1,6 @@
+** 0.1.6
+- Added extra depends
+
 ** 0.1.5
 - Added gitlab dependency in metadata
 
