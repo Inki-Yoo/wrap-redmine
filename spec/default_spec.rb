@@ -15,10 +15,10 @@ describe 'wrapper-redmine::default' do
     stub_command("\"/usr/bin/mysql\" -u root -e 'show databases;'").and_return(true)
   end
 
-  %w{redmine::default
+  %w(redmine::default
      wrapper-redmine::redmine_plugins
      wrapper-redmine::sync_repos
-    }.each do |rec|
+).each do |rec|
     it "should include the #{rec} recipe" do
       expect(chef_run).to include_recipe(rec)
     end
